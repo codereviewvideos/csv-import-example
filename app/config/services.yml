@@ -1,0 +1,13 @@
+# Learn more about services, parameters and containers at
+# http://symfony.com/doc/current/service_container.html
+parameters:
+#    parameter_name: value
+
+services:
+
+    console_command.csv_import:
+        class: AppBundle\Command\CsvImportCommand
+        arguments:
+            - "@doctrine.orm.default_entity_manager"
+        tags:
+            -  { name: console.command }
